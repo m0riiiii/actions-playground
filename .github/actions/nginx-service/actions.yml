@@ -1,0 +1,14 @@
+name: 'nginx service'
+description: 'nginx service test action'
+inputs:
+  port:
+    description: 'nginx host mapping port'
+    required: true
+    default: 8080
+runs:
+  using: "composite"
+  services:
+    nginx:
+      image: nginx
+      ports:
+      - ${{ inputs.port }}:80

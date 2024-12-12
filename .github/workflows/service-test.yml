@@ -1,0 +1,11 @@
+name: 'service test'
+on:
+  workflow_dispatch:
+
+jobs:
+  service-check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: ./.github/actions/nginx-service
+    - name: check nginx
+      run: curl localhost:8080
