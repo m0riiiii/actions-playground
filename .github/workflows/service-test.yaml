@@ -6,6 +6,7 @@ jobs:
   service-check:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v3
     - uses: ./.github/actions/nginx-service
     - name: check nginx
       run: curl localhost:8080
